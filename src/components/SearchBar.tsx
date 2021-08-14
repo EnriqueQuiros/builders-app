@@ -26,7 +26,7 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
           type="text"
           className="w-full py-2 px-8   bg-white rounded-md focus:outline-none focus:ring ring-gray-300 "
           placeholder="Search"
-          onChange={(e) => props.onSearch(e.target.value)}
+          onChange={(e) => props.onSearch(e.target.value.toLocaleLowerCase())}
         />
       </div>
     </>
