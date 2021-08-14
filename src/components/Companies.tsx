@@ -3,22 +3,25 @@ import ICompany from "../interfaces";
 import Company from "./Company";
 import { useGetCompanies } from "../hooks/useGetCompanies";
 import SearchBar from "./SearchBar";
+import FilterBar from "./FilterBar";
 
 const Companies = () => {
   const { data, status } = useGetCompanies();
   const [searchText, setSearchText] = React.useState("");
+  
 
-  const search = (newText: string) => setSearchText(newText);
+  const search = (newSearch: string) => setSearchText(newSearch);
 
   React.useEffect(() => {
     console.log("SEARCH ", searchText);
   }, [searchText]);
 
   return (
-    <>
-      <h1 className="text-2xl font-bold text-gray-700 mt-6">Companies</h1>
+    <div className="bg-gray-100 ">
+      <h1 className="text-2xl font-bold  pt-6">Companies</h1>
 
       <SearchBar onSearch={search} />
+      <FilterBar onFilter={search}/>
 
       {status === "error" && <div>Error fetching data</div>}
 
@@ -31,7 +34,7 @@ const Companies = () => {
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

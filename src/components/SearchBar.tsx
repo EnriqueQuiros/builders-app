@@ -24,7 +24,7 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
 
         <input
           type="text"
-          className="w-full py-2 px-8  text-gray-700 bg-white rounded-md focus:outline-none focus:ring ring-gray-300 "
+          className="w-full py-2 px-8   bg-white rounded-md focus:outline-none focus:ring ring-gray-300 "
           placeholder="Search"
           onChange={(e) => props.onSearch(e.target.value)}
         />
