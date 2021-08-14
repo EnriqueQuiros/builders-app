@@ -17,7 +17,7 @@ const Companies = () => {
 
   return (
     <div className="bg-gray-100 ">
-      <h1 className="text-2xl font-bold  pt-6">Companies</h1>
+      <h1 className="text-2xl font-bold text-center  pt-6">Building companies</h1>
 
       <SearchBar onSearch={setSearchText} />
       <FilterBar onFilter={setSearchText} />

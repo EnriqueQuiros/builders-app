@@ -1,6 +1,5 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 
-import "./App.css";
 import Companies from "./components/Companies";
 
 const queryClient = new QueryClient({
