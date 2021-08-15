@@ -23,7 +23,7 @@ const SpecialtyToggle = (props: Props) => {
         <input
           checked={props.specialties.includes(props.name)}
           onChange={() => ToggleSpecialty(props.name)}
-          data-testid= {"toggle-" + props.name}
+          data-testid={"toggle-" + props.name}
           className="hidden"
           type="checkbox"
           id={props.name}

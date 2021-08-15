@@ -8,8 +8,10 @@ npm start
 
 # Others
 
-### To pass the tests
-npm test
+### Run tests
+ - Unit: npm test
+ - Integration: npm run cypress
+  
 ### To build the app for production
 npm run build
 

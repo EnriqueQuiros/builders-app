@@ -1,6 +1,5 @@
 import ICompany from "../interfaces";
 
-
 const Company = (company: ICompany) => {
   return (
     <>
