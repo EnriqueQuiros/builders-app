@@ -8,7 +8,11 @@ import FilterBar from "./FilterBar";
 const Companies = () => {
   const { data, status } = useGetCompanies();
   const [filterText, setFilterText] = React.useState("");
-  const [filterSpecialty, setFilterSpecialty] = React.useState<string[]>(["excavation","plumbing","electrical",]);
+  const [filterSpecialty, setFilterSpecialty] = React.useState<string[]>([
+    "excavation",
+    "plumbing",
+    "electrical",
+  ]);
 
   const filteredCompanies = data?.filter(
     (item) =>
@@ -20,21 +24,27 @@ const Companies = () => {
 
   return (
     <div className="bg-gray-100 ">
-      <h1 className="text-2xl font-bold text-center  pt-6">
+      <h1 className="text-2xl font-bold text-center pt-6">
         Building companies
       </h1>
 
       <SearchBar onSearch={setFilterText} />
       <FilterBar specialties={filterSpecialty} onFilter={setFilterSpecialty} />
 
-      {status === "error" && <div>Error fetching data</div>}
+      {status === "error" && (
+        <h1 className="text-xl  text-center p-12">Error fetching data </h1>
+      )}
 
-      {status === "loading" && <div>Loading data...</div>}
+      {status === "loading" && (
+        <h1 className="text-xl text-center p-12">Loading data... </h1>
+      )}
 
       {status === "success" && (
-        <div>
+        <div className="pb-10">
           {!filteredCompanies?.length && (
-            <div>No companies fit with the filter criteria</div>
+            <h1 className="text-xl text-center p-12">
+              No companies fit with the filter criteria
+            </h1>
           )}
 
           {companyList?.map((company: ICompany) => (

@@ -1,5 +1,4 @@
 import { QueryClient, QueryClientProvider } from "react-query";
-
 import Companies from "./components/Companies";
 
 const queryClient = new QueryClient({

@@ -5,7 +5,7 @@ export interface Props {
 }
 
 const SpecialtyToggle = (props: Props) => {
-  const ToggleSpecialty = (e: any, filter: string) => {
+  const ToggleSpecialty = (filter: string) => {
     let specialties = props.specialties;
 
     if (props.specialties.includes(filter)) {
@@ -22,11 +22,10 @@ const SpecialtyToggle = (props: Props) => {
         {props.name}
         <input
           checked={props.specialties.includes(props.name)}
-          onChange={(e) => ToggleSpecialty(e, props.name)}
+          onChange={() => ToggleSpecialty(props.name)}
           className="hidden"
           type="checkbox"
           id={props.name}
-          value="1"
         />
         <label
           className="flex items-center justify-start w-10 border border-gray-400 h-6 p-1 rounded-full cursor-pointer"
