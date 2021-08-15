@@ -7,20 +7,25 @@ import FilterBar from "./FilterBar";
 
 const Companies = () => {
   const { data, status } = useGetCompanies();
-  const [searchText, setSearchText] = React.useState("");
+  const [filterText, setFilterText] = React.useState("");
+  const [filterSpecialty, setFilterSpecialty] = React.useState<string[]>(["excavation","plumbing","electrical",]);
 
-  const filteredCompanies = data?.filter((item) =>
-    item.name.toLocaleLowerCase().includes(searchText)
+  const filteredCompanies = data?.filter(
+    (item) =>
+      item.name.toLocaleLowerCase().includes(filterText) &&
+      item.specialties.some((specialty) => filterSpecialty.includes(specialty))
   );
 
-  const companyList = searchText ? filteredCompanies : data;
+  const companyList = filteredCompanies ? filteredCompanies : data;
 
   return (
     <div className="bg-gray-100 ">
-      <h1 className="text-2xl font-bold text-center  pt-6">Building companies</h1>
+      <h1 className="text-2xl font-bold text-center  pt-6">
+        Building companies
+      </h1>
 
-      <SearchBar onSearch={setSearchText} />
-      <FilterBar onFilter={setSearchText} />
+      <SearchBar onSearch={setFilterText} />
+      <FilterBar specialties={filterSpecialty} onFilter={setFilterSpecialty} />
 
       {status === "error" && <div>Error fetching data</div>}
 

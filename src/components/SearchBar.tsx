@@ -1,8 +1,8 @@
-export interface SearchBarProps {
+export interface Props {
   onSearch(searchText: string): void;
 }
 
-const SearchBar: React.FC<SearchBarProps> = (props) => {
+const SearchBar = (props: Props) => {
   return (
     <>
       <div className="flex max-w-md mx-auto  bg-white rounded-lg shadow-lg mt-10">

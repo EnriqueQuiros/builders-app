@@ -1,6 +1,7 @@
 import ICompany from "../interfaces";
 
-const Company: React.FC<ICompany> = (company) => {
+
+const Company = (company: ICompany) => {
   return (
     <>
       <div className="flex max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-lg mt-10">
