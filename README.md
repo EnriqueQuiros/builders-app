@@ -1,3 +1,11 @@
+# Builders
+
+Small app made in react using 
+    - Typescript
+    - React query
+    - Jest + Cypress
+
+
 # How to run
 ### 1: install
 npm install

@@ -2,12 +2,14 @@ import React from "react";
 import { render, fireEvent, screen } from "@testing-library/react";
 import App from "../App";
 
+
 test("the page try to load data", async () => {
   render(<App />);
 
   const text = await screen.findByText("Loading data...");
   expect(text).toHaveTextContent("Loading data...");
 });
+
 
 test("the page shows a list of companies", async () => {
   render(<App />);
@@ -18,6 +20,7 @@ test("the page shows a list of companies", async () => {
   const img = await screen.findAllByRole("img");
   expect(img).toHaveLength(8);
 });
+
 
 test("filtering by text reduces the list of companies", async () => {
   render(<App />);
@@ -38,6 +41,7 @@ test("filtering by text reduces the list of companies", async () => {
   );
   expect(text).toHaveTextContent("No companies fit with the filter criteria");
 });
+
 
 test("filtering by specialty reduces the list of companies", async () => {
   render(<App />);
