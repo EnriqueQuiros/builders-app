@@ -1,9 +1,9 @@
 # Builders
 
 Small app made in react using 
-    - Typescript
-    - React query
-    - Jest + Cypress
+ - Typescript
+ - React query
+ - Jest + Cypress
 
 
 # How to run
